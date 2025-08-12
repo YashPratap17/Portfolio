@@ -1,10 +1,483 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Portfolio</title>
-	</head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Yash's Portfolio | Web Developer</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" href="https://i.ibb.co/6nZ14qK/batman-logo-png-2032.png">
+</head>
 <body>
-<h1>Hello World! This is my Portfolio</h1>
-<h2>Comming Soon!</h2>
-	</body>
-<footer>
-	</footer>
+
+	<header id="main-header">
+		<a href="#" class="name">Yash Pratap</a>
+		<nav class="navigation">
+			<a href="#about">About</a>
+			<a href="#skills">Skills</a>
+			<a href="#projects">Projects</a>
+			<a href="#contact">Contact</a>
+		</nav>
+	</header>
+
+	<div class="parallax-wrapper">
+		<section id="hero" class="parallax-section hero-section">
+			<div class="hero-bg"></div>
+			<div class="hero-content">
+				<h1 class="line-text1">Hi, I'm Yash Pratap</h1>
+				<p class="line-text2">I'm a <span class="auto-type"></span></p>
+			</div>
+		</section>
+
+		<section id="about" class="content-section">
+			<div class="content-card hidden">
+				<h2 class="heading">About Me</h2>
+				<div class="about-container">
+					<div class="about-image"></div>
+					<div class="about-text">
+						<p>I'm a passionate developer and a lifelong learner, currently pursuing my undergraduate degree. I thrive on turning complex problems into elegant, user-friendly digital experiences.</p>
+						<p>From building responsive websites to exploring the intricacies of backend development, I'm on a journey of constant growth, always excited for the next challenge.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="skills" class="content-section">
+			<div class="content-card hidden">
+				<h2 class="heading">My Skills</h2>
+				<div class="skills-grid">
+					<div class="skill-card"><div class="skill-icon html-icon"></div><span>HTML5</span></div>
+					<div class="skill-card"><div class="skill-icon css-icon"></div><span>CSS3</span></div>
+					<div class="skill-card"><div class="skill-icon js-icon"></div><span>JavaScript</span></div>
+					<div class="skill-card"><div class="skill-icon react-icon"></div><span>React</span></div>
+					<div class="skill-card"><div class="skill-icon node-icon"></div><span>Node.js</span></div>
+					<div class="skill-card"><div class="skill-icon git-icon"></div><span>Git</span></div>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects" class="content-section">
+			<div class="content-card hidden">
+				<h2 class="heading">Projects</h2>
+				<div class="project-grid">
+					<a href="#" class="project-item">
+						<div class="project-logo html-portfolio-logo"></div>
+						<div class="project-title">Pure HTML Portfolio</div>
+					</a>
+					<a href="https://yashisongithub.github.io/amazonclone/" target="_blank" class="project-item">
+						<div class="project-logo amazon-clone-logo"></div>
+						<div class="project-title">Amazon.com Clone</div>
+					</a>
+					<a href="https://yashisongithub.github.io/test.github.io/" target="_blank" class="project-item">
+						<div class="project-logo lenovo-clone-logo"></div>
+						<div class="project-title">Lenovo.in Clone</div>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<footer id="contact" class="content-section footer-section">
+			<div class="content-card hidden">
+				<h2 class="heading">Find Me</h2>
+				<div class="social-links">
+					<a href="https://www.linkedin.com/in/iyashpratap/" target="_blank" class="social-icon linkedin-logo" aria-label="LinkedIn"></a>
+					<a href="https://github.com/yashisongithub" target="_blank" class="social-icon github-logo" aria-label="GitHub"></a>
+					<a href="http://x.com/iYashPratap" target="_blank" class="social-icon x-logo" aria-label="X / Twitter"></a>
+					<a href="https://www.instagram.com/iyashpratap" target="_blank" class="social-icon insta-logo" aria-label="Instagram"></a>
+				</div>
+				<div class="footer-bottom">
+					<p>Made with &hearts; by Yash Pratap</p>
+					<p>&copy; 2024 All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+	<script>
+		// --- Typed.js Initialization ---
+		var typed = new Typed(".auto-type", {
+			strings: ["Web Developer.", "Creative Coder.", "Problem Solver.", "Student."],
+			typeSpeed: 70,
+			backSpeed: 40,
+			loop: true
+		});
+
+		// --- Intersection Observer for Scroll Animations ---
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('show');
+				} else {
+					// Optional: remove class to re-trigger animation on scroll up
+					// entry.target.classList.remove('show'); 
+				}
+			});
+		});
+
+		const hiddenElements = document.querySelectorAll('.hidden');
+		hiddenElements.forEach((el) => observer.observe(el));
+		
+		// --- Header Scroll Effect ---
+		const header = document.getElementById('main-header');
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 50) {
+				header.classList.add('scrolled');
+			} else {
+				header.classList.remove('scrolled');
+			}
+		});
+
+	</script>
+<style>
+	/* === CSS VARIABLES & GENERAL STYLES === */
+:root {
+	--bg-color: #020a13;
+	--primary-color: #89fffd;
+	--secondary-color: #a2d2ff;
+	--text-color: #e0e0e0;
+	--card-bg: rgba(15, 23, 42, 0.6);
+	--card-border: rgba(162, 210, 255, 0.2);
+	--font-family: 'Poppins', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 100px;
+}
+
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	font-family: var(--font-family);
+	overflow-x: hidden;
+}
+
+h1, h2, h3 {
+	font-weight: 600;
+}
+
+/* === PARALLAX WRAPPER === */
+.parallax-wrapper {
+	height: 100vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+	perspective: 10px;
+}
+
+.parallax-section {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	color: white;
+}
+
+.hero-section {
+	transform-style: preserve-3d;
+	z-index: -1;
+}
+
+.hero-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+	background-size: cover;
+	background-position: center;
+	transform: translateZ(-10px) scale(2); /* Moves background away and scales it up */
+	z-index: -1;
+}
+
+.hero-content {
+	text-align: center;
+	text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+	transform: translateZ(0); /* Keeps content in the foreground */
+}
+
+.line-text1 {
+	font-size: 4rem;
+	font-weight: 700;
+}
+
+.line-text2 {
+	font-size: 2rem;
+	font-weight: 300;
+}
+
+.line-text2 .auto-type {
+	color: var(--primary-color);
+	font-weight: 600;
+}
+
+/* === CONTENT SECTIONS === */
+.content-section {
+	background-color: var(--bg-color);
+	padding: 100px 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 80vh;
+}
+
+.content-card {
+	width: 100%;
+	max-width: 1100px;
+	background: var(--card-bg);
+	border: 1px solid var(--card-border);
+	border-radius: 20px;
+	padding: 40px;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.heading {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 50px;
+	color: white;
+}
+
+/* --- Scroll Animation --- */
+.hidden {
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.show {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+
+/* === HEADER === */
+#main-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 50px;
+	z-index: 1000;
+	transition: background-color 0.4s ease, padding 0.4s ease;
+}
+
+#main-header.scrolled {
+	background-color: rgba(2, 10, 19, 0.8);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	padding: 15px 50px;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.name {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: white;
+	text-decoration: none;
+}
+
+.navigation {
+	display: flex;
+	gap: 35px;
+}
+
+.navigation a {
+	color: var(--text-color);
+	text-decoration: none;
+	font-size: 1rem;
+	position: relative;
+	padding-bottom: 5px;
+}
+
+.navigation a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--primary-color);
+	transition: width 0.3s ease;
+}
+
+.navigation a:hover::after {
+	width: 100%;
+}
+
+/* === ABOUT SECTION === */
+.about-container {
+	display: flex;
+	align-items: center;
+	gap: 50px;
+}
+.about-image {
+	width: 250px;
+	height: 250px;
+	background-image: url(https://cdni.iconscout.com/illustration/premium/thumb/man-coder-programming-on-computer-illustration-download-in-svg-png-gif-file-formats--html-logo-java-web-developer-software-development-pack-design-illustrations-5264782.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	flex-shrink: 0;
+}
+.about-text p {
+	font-size: 1.1rem;
+	line-height: 1.8;
+	margin-bottom: 20px;
+}
+
+/* === SKILLS SECTION === */
+.skills-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 30px;
+}
+.skill-card {
+	text-align: center;
+	padding: 20px;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,0.05);
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.skill-card:hover {
+	transform: translateY(-10px);
+	background-color: rgba(137, 255, 253, 0.1);
+}
+.skill-icon {
+	height: 60px;
+	width: 100%;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-bottom: 15px;
+}
+.html-icon { background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg); }
+.css-icon { background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg); }
+.js-icon { background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg); }
+.react-icon { background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg); }
+.node-icon { background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg); }
+.git-icon { background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg); }
+
+
+/* === PROJECTS SECTION === */
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 30px;
+}
+.project-item {
+	background-color: rgba(255,255,255,0.05);
+	border-radius: 15px;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: var(--text-color);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-item:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.project-logo {
+	height: 80px;
+	width: 80px;
+	margin: 0 auto 20px auto;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+}
+.project-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+.html-portfolio-logo { background-image: url(https://seekvectors.com/files/download/HTML5%20LOGO.png); }
+.amazon-clone-logo { background-image: url(https://www.freeiconspng.com/thumbs/amazon-icon/amazon-icon--socialmedia-iconset--uiconstock-0.png); background-color: white; }
+.lenovo-clone-logo { background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfHx4mbHr8GdOk8uhminn-hUTU8a_3vc7-9A&s); background-color: white; }
+
+/* === FOOTER / CONTACT SECTION === */
+.footer-section {
+	min-height: auto;
+	padding-bottom: 50px;
+}
+.social-links {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin-bottom: 40px;
+}
+.social-icon {
+	height: 50px;
+	width: 50px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: transform 0.3s ease;
+	filter: invert(90%) sepia(100%) saturate(26%) hue-rotate(113deg) brightness(105%) contrast(91%);
+}
+.social-icon:hover {
+	transform: scale(1.2);
+	filter: invert(88%) sepia(51%) saturate(2059%) hue-rotate(117deg) brightness(102%) contrast(106%);
+}
+.linkedin-logo { background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg); }
+.github-logo { background-image: url(https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg); }
+.x-logo { background-image: url(https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-white-icon.png); }
+.insta-logo { background-image: url(https://cdn.hugeicons.com/icons/instagram-stroke-rounded.svg); }
+
+.footer-bottom {
+	text-align: center;
+	margin-top: 30px;
+	padding-top: 20px;
+	border-top: 1px solid var(--card-border);
+	font-size: 0.9rem;
+	color: #aaa;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 768px) {
+	.line-text1 { font-size: 2.5rem; }
+	.line-text2 { font-size: 1.5rem; }
+
+	#main-header {
+		padding: 15px 20px;
+	}
+	.navigation {
+		display: none; /* Simple solution for mobile, could be replaced with a hamburger menu */
+	}
+	
+	.about-container {
+		flex-direction: column;
+		text-align: center;
+	}
+	.about-image {
+		width: 150px;
+		height: 150px;
+	}
+
+	.content-section {
+		padding: 80px 5%;
+	}
+	.content-card {
+		padding: 30px 20px;
+	}
+	.heading {
+		font-size: 2rem;
+	}
+}
+</style>
+</body>
+</html>
